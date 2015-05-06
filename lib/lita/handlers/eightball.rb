@@ -26,8 +26,9 @@ module Lita
         "Outlook not so good",
         "Very doubtful"
       ]
-      
+
       route %r{8ball|eightball}i, :shake, command: true, help: { "8ball" => "Shakes the eightball" }
+      route %r{\?$}, :shake, command: true
 
       def shake(response)
         response.reply RESPONSES.shuffle.first
